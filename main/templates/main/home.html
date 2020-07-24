@@ -1,0 +1,250 @@
+{% extends "main/main.html" %}
+{% load static %}
+
+{% block content %}
+
+  <div id="inicio" style="height: 90vh" id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot valign-wrapper" style="height: 100%">
+      <div class="container">
+        <h1 style="margin-top: 10%; font-weight: bolder; text-shadow: 2px 2px #000"class="header center green-text text-lighten-1">COOPERSUCESSO IOMERÊ</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">Lorem Ipsum</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static "img/churrasco2.jpg"%}"/></div>
+  </div>
+
+
+  <div id="produtos" class="container">
+    <div class="section">
+      <h3 style="margin-bottom: 50px;font-weight: bold" class="header center green-text text">Produtos</h3>
+      <ul>
+
+        {% for p in produtos %}
+          <li>
+            <div class="row valign-wrapper fade-in slide-in">
+
+              {% if forloop.counter0|divisibleby:2 %}
+                <div class="col l4 s12 from-left"><img class="circle responsive-img" src="/media/{{p.imagem_produto}}"></div>
+                <div class="col l8 s12 from-right">
+                  <h4 class="green-text">{{p.nome_produto}}</h4>
+                  <p class="flow-text grey-text text-darken-3">{{p.desc_produto}}</p>
+                </div>
+              {% else %}
+                <div class="col l8 s12 from-left right-align">
+                  <h4 class="green-text">{{p.nome_produto}}</h4>
+                  <p class="flow-text grey-text text-darken-3">{{p.desc_produto}}</p>
+                </div>
+                <div class="col l4 s12 from-right"><img class="circle responsive-img" src="/media/{{p.imagem_produto}}"></div>
+              {% endif %}
+
+            </div>
+          </li>
+        {% endfor %}
+
+        <!--
+        <li>
+          <div class="row valign-wrapper fade-in slide-in">
+            <div class="col l4 s12 from-left"><img class="circle responsive-img" src="{% static "img/products/bacon.jpeg"%}"></div>
+            <div class="col l8 s12 from-right">
+              <h4 class="green-text">Bacon em Manta</h4>
+              <p class="flow-text grey-text text-darken-3">Magnam iusto voluptatem quisquam. Mollitia facere ea est. Est repellat consequatur libero qui eum eos. Sed iste voluptatibus hic qui repudiandae vel doloribus velit.</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row valign-wrapper fade-in slide-in">
+            <div class="col l8 s12 from-left right-align">
+              <h4 class="green-text">Linguiça de Pernil</h4>
+              <p class="flow-text grey-text text-darken-3">Magnam iusto voluptatem quisquam. Mollitia facere ea est. Est repellat consequatur libero qui eum eos. Sed iste voluptatibus hic qui repudiandae vel doloribus velit.</p>
+            </div>
+            <div class="col l4 s12 from-right"><img class="circle responsive-img" src="{% static "img/products/pernil.jpeg"%}"></div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row valign-wrapper fade-in slide-in">
+            <div class="col l4 s12 from-left"><img class="circle responsive-img" src="{% static "img/products/campeira.jpeg"%}"></div>
+            <div class="col l8 s12 from-right">
+              <h4 class="green-text">Linguiça Campeira</h4>
+              <p class="flow-text grey-text text-darken-3">Magnam iusto voluptatem quisquam. Mollitia facere ea est. Est repellat consequatur libero qui eum eos. Sed iste voluptatibus hic qui repudiandae vel doloribus velit.</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row valign-wrapper fade-in slide-in">
+            <div class="col l8 s12 from-left right-align">
+              <h4 class="green-text">Linguiça Toscana</h4>
+              <p class="flow-text grey-text text-darken-3">Magnam iusto voluptatem quisquam. Mollitia facere ea est. Est repellat consequatur libero qui eum eos. Sed iste voluptatibus hic qui repudiandae vel doloribus velit.</p>
+            </div>
+            <div class="col l4 s12 from-right"><img class="circle responsive-img" src="{% static "img/products/toscana.jpeg"%}"></div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row valign-wrapper fade-in slide-in">
+            <div class="col l4 s12 from-left"><img class="circle responsive-img" src="{% static "img/products/suan.jpeg"%}"></div>
+            <div class="col l8 s12 from-right">
+              <h4 class="green-text">Espinhaço de Suíno</h4>
+              <p class="flow-text grey-text text-darken-3">Magnam iusto voluptatem quisquam. Mollitia facere ea est. Est repellat consequatur libero qui eum eos. Sed iste voluptatibus hic qui repudiandae vel doloribus velit.</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row valign-wrapper fade-in slide-in">
+            <div class="col l8 s12 from-left right-align">
+              <h4 class="green-text">Queijo de porco</h4>
+              <p class="flow-text grey-text text-darken-3">Magnam iusto voluptatem quisquam. Mollitia facere ea est. Est repellat consequatur libero qui eum eos. Sed iste voluptatibus hic qui repudiandae vel doloribus velit.</p>
+            </div>
+            <div class="col l4 s12 from-right"><img class="circle responsive-img" src="{% static "img/products/queijo.jpeg"%}"></div>
+          </div>
+        </li>
+ -->
+      </ul>
+    </div>
+  </div>
+
+
+  <div id="empresa" class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h2 style="text-shadow: 2px 2px #222" class="header col s12 light">Empresa</h2>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static "img/churrasco2.jpg"%}" alt="Unsplashed background img 2"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+      <h3 class="header center green-text">SOMOS A BONSUCESSO</h3>
+      <p class="flow-text grey-text text-darken-3">
+        Localizado no interior de Iomerê, no distrito de Bom Sucesso, o Frigorífico Bonsucesso iniciou suas atividades em 2016.<br>
+        Em outubro de 2018, inaugurou o setor de industrializados. Passando a produzir uma grande gama de produtos feitos com qualidade superior, segurança alimentar e muito amor.<br>
+        Desta forma, mantivemos a tradição da região de produzir embutidos deliciosos com um toque artesanal.<br>
+        A Empresa possui um mix de produtos muito variado produzindo desde cortes “in natura” (cortes resfriados e congelados) até produtos industrializados de maior valor agregado (cortes temperados, defumados e linguiças).<br>
+        <br>
+        Atendemos a toda a região com frota própria para garantir a qualidade de nossos produtos e nosso atendimento.
+      </p>
+
+      <!-- <div class="line-separator"></div>
+      <div class="row">
+        <div class="col l4 s12">
+          <h4>Missão</h4>
+          <p class="flow-text grey-text text-darken-3">Maxime aut voluptatem eos aut tempora est. Numquam praesentium nesciunt suscipit corporis nostrum perspiciatis. Ex enim sint sunt a aspernatur.</p>
+        </div>
+
+        <div class="col l4 s12">
+          <h4>Visão</h4>
+          <p class="flow-text grey-text text-darken-3">Maxime aut voluptatem eos aut tempora est. Numquam praesentium nesciunt suscipit corporis nostrum perspiciatis. Ex enim sint sunt a aspernatur.</p>
+        </div>
+
+        <div class="col l4 s12">
+          <h4>Valores</h4>
+          <ul>
+            <li><p class="flow-text grey-text text-darken-3">Lorem.</p></li>
+            <li><p class="flow-text grey-text text-darken-3">Ipsum.</p></li>
+            <li><p class="flow-text grey-text text-darken-3">Dolor.</p></li>
+          </ul>
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+
+
+  <div id="receitas" class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h2 style="text-shadow: 2px 2px #222" class="header col s12 light">Receitas</h2>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static "img/churrasco2.jpg"%}"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <div class="owl-carousel" style="">
+
+        {% for r in receitas %}
+          <a href="receita/{{r.id}}" class="item">
+            <div style="margin: 5px 15px 25px 15px; display:flex; flex-wrap: wrap" class="card white hoverable medium">
+              <div class="card-content black-text">
+                <h6 style="overflow-wrap: break-word; font-weight: bold; margin: 0" class="card-title green-text">{{r.titulo_receita}}</h6>
+                <p style="font-size: 75%">{{r.data_receita}}</p>
+                <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 90%">{{r.resumo_receita}}</p>
+                <img src="/media/{{r.imagem_preview}}" class="responsive-img">
+              </div>
+            </div>
+          </a>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div id="contato" class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h2 style="text-shadow: 2px 2px #222" class="header col s12 light">Contato</h2>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static "img/churrasco2.jpg"%}" alt="Unsplashed background img 2"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 center">
+          <div style="overflow:hidden;resize:none;max-width:100%;width:100%;height:40vh;">
+            <div id="mymap-canvas" style="height:100%; width:100%;max-width:100%;">
+              <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Cooperbom&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col l4 s12">
+          <h5 class="grey-text text-darken-2">Endereço</h5>
+          <p class="grey-text text-darken-2">Rod. 355 - Bom Sucesso. CEP: 89558-000<br>Iomerê - SC</p>
+        </div>
+        <div class="col l4 s12">
+          <h5 class="grey-text text-darken-2">Telefone</h5>
+          <ul>
+            <li class="footericon valign-wrapper"><img src="{% static "img/icons/phone.png" %}"/>+55 (49) 3539-5017</li>
+            <li class="footericon valign-wrapper"><img src="{% static "img/icons/whatsapp.png" %}" />+55 (49) 99826-2162</li>
+          </ul>
+        </div>
+        <div class="col l4 s12">
+          <h5 class="grey-text text-darken-2">Redes sociais</h5>
+          <ul style="display: flex;">
+            <li class="footericon"><a href="https://www.facebook.com/Coopersucesso-Iomer%C3%AA-102182621549297/"><img src="{% static "img/icons/facebook.png"%}"/></a></li>
+            <li class="footericon"><a href="https://www.instagram.com/coopersucessoiomere/"><img src="{% static "img/icons/instagram.png"%}"/></a></li>
+            <li class="footericon">
+              <ul>
+                <li><a style="text-decoration: underline;"class="grey-text text-darken-2" href="mailto: coopersucesso@hotmail.com">coopersucesso@hotmail.com</a></li>
+                <li><a style="text-decoration: underline;"class="grey-text text-darken-2" href="mailto: atendimento@bonsucesso.ind.br">atendimento@bonsucesso.ind.br</a></li>
+                <li><a style="text-decoration: underline;"class="grey-text text-darken-2" href="mailto: vendas@bonsucesso.ind.br">vendas@bonsucesso.ind.br</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

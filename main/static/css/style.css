@@ -1,0 +1,162 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+  font-size: 1.4em;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 50vh;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    /* top: 40%; */
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+  h1{
+    font-size: 10vw;
+  }
+
+  .scrollUp{
+    transform: translateY(-17vh);
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+@media only screen and (max-width : 1800px) {
+  #headernav{
+    width: 100%
+  }
+}
+
+@media only screen and (max-width: 1170px) {
+  .hide-on-med-and-down {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1170px) {
+  .show-on-med-and-down {
+    display: block !important;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+.sticky-nav{
+  position: fixed;
+  z-index: 90;
+  transition: transform 350ms linear;
+}
+
+
+li.footericon{
+  margin-right: 15px;
+}
+
+li.footericon img{
+  width: 25px;
+}
+
+.fade-in{
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+}
+
+.fade-in.appear{
+  opacity: 1;
+}
+
+.from-left{
+  grid-column: 2/3;
+  transform: translateX(-50%);
+}
+
+.from-right{
+  grid-column: 3/4;
+  transform: translateX(50%);
+}
+
+.from-left, .from-right{
+  transition: transform 500ms ease-in-out;
+}
+
+.from-left.appear, .from-right.appear{
+  transform: translateX(0);
+  display: block;
+}
+
+.line-separator{
+  height:1px;
+  background:#adc6ad;
+  border-bottom:1px solid #adc6ad;
+}
+
+#logo-container div img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.section{
+  padding: 8vh 0;
+}
+
+.owl-nav{
+  text-align: center;
+  color: green;
+  font-size: 2.5em;
+}
+
+.owl-nav > button{
+  margin: 0 4vw;
+}
+
+
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}

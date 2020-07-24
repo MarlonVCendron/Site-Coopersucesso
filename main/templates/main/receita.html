@@ -1,0 +1,17 @@
+{% extends "main/main.html" %}
+
+{% block content %}
+
+  <div class="container">
+
+    <div style="margin-top: 80px; margin-bottom: 30px; padding: 2vw" class="white z-depth-1">
+      <div class="card-content black-text">
+        <h1 class="green-text">{{r.titulo_receita}}</h1>
+        <p>{{r.data_receita}}</p>
+
+        <p class="flow-text">{{r.conteudo_receita|safe}}</p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
