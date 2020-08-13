@@ -19,92 +19,150 @@
   <div id="produtos" class="container">
     <div class="section">
       <h3 style="margin-bottom: 50px;font-weight: bold" class="header center green-text text">Produtos</h3>
-      <ul>
+      <div class="hide-mobile">
+        <ul>
+          {% for p in produtos %}
+            <li>
+              <div class="row valign-wrapper fade-in slide-in">
 
-        {% for p in produtos %}
-          <li>
-            <div class="row valign-wrapper fade-in slide-in">
+                {% if forloop.counter0|divisibleby:2 %}
+                  <div class="col l4 s12 from-left"><img class="circle responsive-img" src="/media/{{p.imagem}}"></div>
+                  <div class="col l8 s12 from-right">
+                    <h4 class="green-text">{{p.nome}}</h4>
+                    <p class="flow-text grey-text text-darken-3">{{p.descricao}}</p>
 
-              {% if forloop.counter0|divisibleby:2 %}
-                <div class="col l4 s12 from-left"><img class="circle responsive-img" src="/media/{{p.imagem_produto}}"></div>
-                <div class="col l8 s12 from-right">
-                  <h4 class="green-text">{{p.nome_produto}}</h4>
-                  <p class="flow-text grey-text text-darken-3">{{p.desc_produto}}</p>
-                </div>
-              {% else %}
-                <div class="col l8 s12 from-left right-align">
-                  <h4 class="green-text">{{p.nome_produto}}</h4>
-                  <p class="flow-text grey-text text-darken-3">{{p.desc_produto}}</p>
-                </div>
-                <div class="col l4 s12 from-right"><img class="circle responsive-img" src="/media/{{p.imagem_produto}}"></div>
-              {% endif %}
+                    <div class="row">
+                      {% if p.info1 %}
+                      <div class="col s12 m12 l3 left center-align valign-wrapper" style="flex-wrap: wrap; height: 20vh; padding: 1vw; margin: 1vw; border-radius: 5px; background-color: #f1f1f1">
+                        <h5 style="color: #4caf50;">{{p.info1}}</h5>
+                        {% if p.cod1 %}
+                        <p style="color: #555">Cód. Barras: <strong>{{p.cod1}}</strong></p>
+                        {% endif %}
+                      </div>
+                      {% endif %}
 
-            </div>
-          </li>
-        {% endfor %}
+                      {% if p.info2 %}
+                      <div class="col s12 m12 l3 left center-align valign-wrapper" style="flex-wrap: wrap; height: 20vh; padding: 1vw; margin: 1vw; border-radius: 5px; background-color: #f1f1f1">
+                        <h5 style="color: #4caf50;">{{p.info2}}</h5>
+                        {% if p.cod2 %}
+                        <p style="color: #555">Cód. Barras: <strong>{{p.cod2}}</strong></p>
+                        {% endif %}
+                      </div>
+                      {% endif %}
 
-        <!--
-        <li>
-          <div class="row valign-wrapper fade-in slide-in">
-            <div class="col l4 s12 from-left"><img class="circle responsive-img" src="{% static "img/products/bacon.jpeg"%}"></div>
-            <div class="col l8 s12 from-right">
-              <h4 class="green-text">Bacon em Manta</h4>
-              <p class="flow-text grey-text text-darken-3">Magnam iusto voluptatem quisquam. Mollitia facere ea est. Est repellat consequatur libero qui eum eos. Sed iste voluptatibus hic qui repudiandae vel doloribus velit.</p>
-            </div>
-          </div>
-        </li>
+                      {% if p.info3 %}
+                      <div class="col s12 m12 l3 left center-align valign-wrapper" style="flex-wrap: wrap; height: 20vh; padding: 1vw; margin: 1vw; border-radius: 5px; background-color: #f1f1f1">
+                        <h5 style="color: #4caf50;">{{p.info3}}</h5>
+                        {% if p.cod3 %}
+                        <p style="color: #555">Cód. Barras: <strong>{{p.cod3}}</strong></p>
+                        {% endif %}
+                      </div>
+                      {% endif %}
+                    </div>
+                  </div>
 
-        <li>
-          <div class="row valign-wrapper fade-in slide-in">
-            <div class="col l8 s12 from-left right-align">
-              <h4 class="green-text">Linguiça de Pernil</h4>
-              <p class="flow-text grey-text text-darken-3">Magnam iusto voluptatem quisquam. Mollitia facere ea est. Est repellat consequatur libero qui eum eos. Sed iste voluptatibus hic qui repudiandae vel doloribus velit.</p>
-            </div>
-            <div class="col l4 s12 from-right"><img class="circle responsive-img" src="{% static "img/products/pernil.jpeg"%}"></div>
-          </div>
-        </li>
+                {% else %}
+                  <div class="col l8 s12 from-left right-align">
+                    <h4 class="green-text">{{p.nome}}</h4>
+                    <p class="flow-text grey-text text-darken-3">{{p.descricao}}</p>
 
-        <li>
-          <div class="row valign-wrapper fade-in slide-in">
-            <div class="col l4 s12 from-left"><img class="circle responsive-img" src="{% static "img/products/campeira.jpeg"%}"></div>
-            <div class="col l8 s12 from-right">
-              <h4 class="green-text">Linguiça Campeira</h4>
-              <p class="flow-text grey-text text-darken-3">Magnam iusto voluptatem quisquam. Mollitia facere ea est. Est repellat consequatur libero qui eum eos. Sed iste voluptatibus hic qui repudiandae vel doloribus velit.</p>
-            </div>
-          </div>
-        </li>
+                    <div class="row">
+                      {% if p.info1 %}
+                      <div class="col s12 m12 l3 right center-align valign-wrapper" style="flex-wrap: wrap; height: 20vh; padding: 1vw; margin: 1vw; border-radius: 5px; background-color: #f1f1f1">
+                        <h5 style="color: #4caf50;">{{p.info1}}</h5>
+                        {% if p.cod1 %}
+                        <p style="color: #555">Cód. Barras: <strong>{{p.cod1}}</strong></p>
+                        {% endif %}
+                      </div>
+                      {% endif %}
 
-        <li>
-          <div class="row valign-wrapper fade-in slide-in">
-            <div class="col l8 s12 from-left right-align">
-              <h4 class="green-text">Linguiça Toscana</h4>
-              <p class="flow-text grey-text text-darken-3">Magnam iusto voluptatem quisquam. Mollitia facere ea est. Est repellat consequatur libero qui eum eos. Sed iste voluptatibus hic qui repudiandae vel doloribus velit.</p>
-            </div>
-            <div class="col l4 s12 from-right"><img class="circle responsive-img" src="{% static "img/products/toscana.jpeg"%}"></div>
-          </div>
-        </li>
+                      {% if p.info2 %}
+                      <div class="col s12 m12 l3 right center-align valign-wrapper" style="flex-wrap: wrap; height: 20vh; padding: 1vw; margin: 1vw; border-radius: 5px; background-color: #f1f1f1">
+                        <h5 style="color: #4caf50;">{{p.info2}}</h5>
+                        {% if p.cod2 %}
+                        <p style="color: #555">Cód. Barras: <strong>{{p.cod2}}</strong></p>
+                        {% endif %}
+                      </div>
+                      {% endif %}
 
-        <li>
-          <div class="row valign-wrapper fade-in slide-in">
-            <div class="col l4 s12 from-left"><img class="circle responsive-img" src="{% static "img/products/suan.jpeg"%}"></div>
-            <div class="col l8 s12 from-right">
-              <h4 class="green-text">Espinhaço de Suíno</h4>
-              <p class="flow-text grey-text text-darken-3">Magnam iusto voluptatem quisquam. Mollitia facere ea est. Est repellat consequatur libero qui eum eos. Sed iste voluptatibus hic qui repudiandae vel doloribus velit.</p>
-            </div>
-          </div>
-        </li>
+                      {% if p.info3 %}
+                      <div class="col s12 m12 l3 right center-align valign-wrapper" style="flex-wrap: wrap; height: 20vh; padding: 1vw; margin: 1vw; border-radius: 5px; background-color: #f1f1f1">
+                        <h5 style="color: #4caf50;">{{p.info3}}</h5>
+                        {% if p.cod3 %}
+                        <p style="color: #555">Cód. Barras: <strong>{{p.cod3}}</strong></p>
+                        {% endif %}
+                      </div>
+                      {% endif %}
+                    </div>
 
-        <li>
-          <div class="row valign-wrapper fade-in slide-in">
-            <div class="col l8 s12 from-left right-align">
-              <h4 class="green-text">Queijo de porco</h4>
-              <p class="flow-text grey-text text-darken-3">Magnam iusto voluptatem quisquam. Mollitia facere ea est. Est repellat consequatur libero qui eum eos. Sed iste voluptatibus hic qui repudiandae vel doloribus velit.</p>
-            </div>
-            <div class="col l4 s12 from-right"><img class="circle responsive-img" src="{% static "img/products/queijo.jpeg"%}"></div>
-          </div>
-        </li>
- -->
-      </ul>
+                  </div>
+                  <div class="col l4 s12 from-right"><img class="circle responsive-img" src="/media/{{p.imagem}}"></div>
+                {% endif %}
+
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="show-mobile">
+        <ul>
+
+          {% for p in produtos %}
+            <li>
+              <div class="row fade-in slide-in">
+
+                {% if forloop.counter0|divisibleby:2 %}
+                  <div class="from-left"><img class="circle responsive-img" src="/media/{{p.imagem}}"></div>
+                  <div class="col l8 s12 from-left">
+                {% else %}
+                  <div class="col l4 s12 from-right"><img class="circle responsive-img" src="/media/{{p.imagem}}"></div>
+                  <div class="col l8 s12 from-right left-align">
+                {% endif %}
+
+
+                    <h4 class="green-text center-align">{{p.nome}}</h4>
+                    <p class="flow-text grey-text text-darken-3">{{p.descricao}}</p>
+
+                    <div class="row center-align" style="display: flex; justify-content: center">
+                      {% if p.info1 %}
+                      <div class="center-align valign-wrapper" style="width: 33.3%;flex-wrap: wrap; height: 20vh; padding: 1vw; margin: 1vw; border-radius: 5px; background-color: #f1f1f1">
+                        <h6 style="color: #4caf50;">{{p.info1}}</h6>
+                        {% if p.cod1 %}
+                        <p style="color: #555">Cód. Barras: <strong>{{p.cod1}}</strong></p>
+                        {% endif %}
+                      </div>
+                      {% endif %}
+
+                      {% if p.info2 %}
+                      <div class="center-align valign-wrapper" style="width: 33.3%;flex-wrap: wrap; height: 20vh; padding: 1vw; margin: 1vw; border-radius: 5px; background-color: #f1f1f1">
+                        <h6 style="color: #4caf50;">{{p.info2}}</h6>
+                        {% if p.cod2 %}
+                        <p style="color: #555">Cód. Barras: <strong>{{p.cod2}}</strong></p>
+                        {% endif %}
+                      </div>
+                      {% endif %}
+
+                      {% if p.info3 %}
+                      <div class="center-align valign-wrapper" style="width: 33.3%;flex-wrap: wrap; height: 20vh; padding: 1vw; margin: 1vw; border-radius: 5px; background-color: #f1f1f1">
+                        <h6 style="color: #4caf50;">{{p.info3}}</h6>
+                        {% if p.cod3 %}
+                        <p style="color: #555">Cód. Barras: <strong>{{p.cod3}}</strong></p>
+                        {% endif %}
+                      </div>
+                      {% endif %}
+                    </div>
+
+                  </div>
+
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <h4 class="center-align" style="margin-top: 100px; color: #4caf50">Além desses, fornecemos carcaças de suínos, bovinos e ovinos, miúdos, kit feijoada, bucho, suan, cortes como dianteiro, traseiro, costela, etc.</h4>
+
     </div>
   </div>
 
@@ -247,4 +305,11 @@
 
     </div>
   </div>
+
+
+  <style>
+    strong{
+      font-weight: bold;
+    }
+  </style>
 {% endblock %}

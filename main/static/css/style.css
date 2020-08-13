@@ -160,3 +160,21 @@ body {
 main {
   flex: 1 0 auto;
 }
+
+.hide-mobile{
+  display: block;
+}
+
+.show-mobile{
+  display: none;
+}
+
+@media only screen and (max-width : 700px) {
+  .hide-mobile{
+    display: none;
+  }
+
+  .show-mobile{
+    display: block;
+  }
+}

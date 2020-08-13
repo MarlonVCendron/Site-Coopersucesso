@@ -1,4 +1,5 @@
 {% extends "main/main.html" %}
+{% load static %}
 
 {% block content %}
 
@@ -7,11 +8,35 @@
     <div style="margin-top: 80px; margin-bottom: 30px; padding: 2vw" class="white z-depth-1">
       <div class="card-content black-text">
         <h1 class="green-text">{{r.titulo_receita}}</h1>
-        <p>{{r.data_receita}}</p>
+
+        <p style="text-align: center">
+          <img src="/media/{{r.imagem_preview}}" class="responsive-img" style="border-radius: 5px;width: 83.3%;"/>
+          <div class="row">
+            <div class="col s10 m10 l10 offset-l1 offset-m1 offset-s1" style="padding: 1vw; border-radius: 5px; background-color: #e9e9e9">
+              <div class="col l6 m6 s6 center-align valign-wrapper" style="display: flex;">
+                <img src="{% static "img/clock.png"%}" style="width: 35px; margin-right: 15px">
+                <span style="color: #555; margin-right: 10px">TEMPO DE PREPARO: </span>
+                <span style="color: #4caf50"><strong> {{r.tempo_receita}} </strong></span>
+              </div>
+
+              <div class="col l6 m6 s6 center-align valign-wrapper" style="display: flex;">
+                <img src="{% static "img/serving.png"%}" style="width: 35px; margin-right: 15px">
+                <span style="color: #555; margin-right: 10px">PORÇÕES: </span>
+                <span style="color: #4caf50"><strong> {{r.rendimento_receita}} </strong></span>
+              </div>
+            </div>
+          </div>
+        </p>
 
         <p class="flow-text">{{r.conteudo_receita|safe}}</p>
       </div>
     </div>
   </div>
+
+  <style>
+    strong{
+      font-weight: bold;
+    }
+  </style>
 
 {% endblock %}
